@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" width="60" height="64"  viewBox="0 0 100 100" xml:space="preserve">
+  <circle cx="50" cy="50" r="33.625" stroke-miterlimit="10" stroke="#00AAE5" fill="none" stroke-width="3.5" />
+  <path d="M50 16.375c18.571 0 33.625 15.054 33.625 33.625S68.571 83.625 50 83.625 16.375 68.571 16.375 50" stroke-width="12" fill="none" stroke="#00AAE5" stroke-miterlimit="10" />
+  <path d="M41.356 51.958h0a3.214 3.214 0 0 1-3.214-3.214v-5.571a3.214 3.214 0 0 1 3.214-3.214h0a3.214 3.214 0 0 1 3.214 3.214v5.571a3.213 3.213 0 0 1-3.214 3.214z" fill="none" stroke="#00AAE5" stroke-width="3.5" stroke-miterlimit="10" />
+  <path d="M58.644 60.021h0a3.214 3.214 0 0 0 3.214-3.214v-5.571a3.214 3.214 0 0 0-3.214-3.214h0a3.214 3.214 0 0 0-3.214 3.214v5.571a3.213 3.213 0 0 0 3.214 3.214z" fill="none" stroke="#00AAE5" stroke-width="3.5" stroke-miterlimit="10" />
+  <path fill="none" stroke="#00AAE5" stroke-width="3.5" stroke-miterlimit="10" d="M55.804 37.02l-12 25.96" />
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icn-auto-tracking</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="" fill-rule="evenodd">
+        <g id="icn-auto-tracking">
+            <g id="auto-tracking" transform="translate(3.000000, 5.000000)">
+                <path d="M35,43 L5,43 L5,18.0906 L5,18.0906 C5,16.3837088 6.38370875,15 8.0906,15 L31.9094,15 L31.9094,15 C33.6162912,15 35,16.3837088 35,18.0906 L35,43 Z" id="Stroke-1-Copy" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M35,20.03125 C35,19.4617064 35.4560459,19 36.0234758,19 L49.2146195,19 C49.7798695,19 50.4247675,19.4242586 50.6523528,19.941502 L54.5857424,28.8810946 C54.8145306,29.4010718 55,30.2915874 55,30.8566054 L55,41.9659913 C55,42.5370585 54.5446944,43 53.9668282,43 L36.0331718,43 C35.4625668,43 35,42.5419989 35,41.96875 L35,20.03125 Z" id="Stroke-4-Copy" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="Rectangle-10" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" x="3" y="42" width="54" height="4" rx="2"></rect>
+                <circle id="Oval-2" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" cx="13" cy="47" r="7"></circle>
+                <circle id="Oval-2-Copy" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" cx="46" cy="47" r="7"></circle>
+                <circle id="Oval-2" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" cx="13" cy="47" r="3"></circle>
+                <circle id="Oval-2-Copy-2" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" cx="46" cy="47" r="3"></circle>
+                <path d="M40,22 L47.1047881,22 L47.1047881,22 C47.5129182,22 47.8800937,22.2480216 48.0324739,22.6266382 L50.4472688,28.6266382 L50.4472688,28.6266382 C50.6534708,29.1389849 50.4052916,29.7214838 49.8929448,29.9276858 C49.7742624,29.9754514 49.6475169,30 49.519583,30 L40,30 L40,30 C39.4477153,30 39,29.5522847 39,29 L39,23 L39,23 C39,22.4477153 39.4477153,22 40,22 Z" id="Rectangle-11" fill="#00AAE5"></path>
+                <circle id="Oval-165" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" cx="12" cy="12" r="12"></circle>
+                <g id="Group-4-Copy" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.485281, 12.485281) rotate(-45.000000) translate(-12.485281, -12.485281) translate(7.985281, 4.985281)" stroke="#00AAE5" stroke-width="2" fill="#FFFFFF">
+                    <circle id="Oval-4" cx="4.5" cy="4.5" r="4.5"></circle>
+                    <path d="M4.65234375,9.82470703 L4.65234375,14.7002888" id="Path-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
