@@ -113,7 +113,7 @@
         </div>
 
         <v-alert width="300px" v-if="error" type="error">
-          Enter a valid tracking number !
+          {{ error }}
         </v-alert>
 
           <div v-if="tracked && tracked.status != 'notfound'" style="width: 100%;">
@@ -222,7 +222,7 @@ export default {
       })
         .then(response => {
           let carriers = response.data.data;
-          console.log(carriers);
+          //console.log(carriers);
           resolve(carriers);
         })
         .catch(err => {
@@ -232,7 +232,6 @@ export default {
     },
     async postShipment() {
           const carriers = await this.getCarrier();
-          console.log("U trackPackage()", carriers);
           return new Promise((resolve, reject) => {
             if(carriers && carriers.length > 1) {
               carriers.forEach(carrier => {
@@ -252,11 +251,11 @@ export default {
               "carrier_code": carriers[0].code
             })
               .then(response => {
-                console.log("U post shipment", response);
+                //console.log("post shipment", response);
                 resolve(carriers[0]);
               })
               .catch(err => {
-                console.log(err);
+                //console.log(err);
                 reject();
               });
           });
@@ -296,13 +295,11 @@ export default {
       this.trackNum = ''; */
 
       if(tracking.data.data.status == 'pending') {
-        console.log("setting timeout");
         setTimeout(() => {
           setTimeout(() => {
             this.getTracking(carrier.code)
               .then(response => {
                 this.tracked = response.data.data;
-                console.log(this.tracked);
                 this.loadingMain = false;
                 this.trackNum = '';
               })
@@ -315,7 +312,6 @@ export default {
       }
       
       this.tracked = tracking.data.data;
-      console.log(this.tracked);
       this.loadingMain = false;
       this.trackNum = '';
     },
@@ -327,7 +323,6 @@ export default {
         })
           .then(res => {
             resolve(res);
-            console.log("resolved");
           })
           .catch(err => {
             reject();
@@ -347,24 +342,24 @@ export default {
     },
     async trackWithCarrier() {
       if(!this.selectedCarrier) {
-        console.log("error selection");
+        this.error = 'Select Carrier !';
         return;
+      }
+
+      if(this.error) {
+        this.error = '';
       }
 
       this.loadingSelect = true;
       const carrierCode = this.carriersCodes[this.carriersNames.indexOf(this.selectedCarrier)];
-      console.log(carrierCode);
       await this.postWithCarrier(carrierCode);
-      console.log("After resolved");
       const tracking = await this.getTracking(carrierCode);
       if(tracking.data.data.status == 'pending') {
-        console.log("setting timeout")
         setTimeout(() => {
           setTimeout(() => {
           this.getTracking(carrierCode)
           .then(res => {
             this.tracked = res.data.data;
-            console.log(this.tracked.status);
             this.trackNum = '';
             this.carriersNames = [];
             this.carriersCodes = [];
@@ -375,13 +370,12 @@ export default {
         return;
       }
 
-      console.log(tracking);
+      //console.log(tracking);
 
       setTimeout(() => {
         this.getTracking(carrierCode)
         .then(res => {
           this.tracked = res.data.data;
-          console.log(this.tracked.status);
           this.trackNum = '';
           this.carriersNames = [];
           this.carriersCodes = [];
@@ -429,7 +423,7 @@ h1.bkg-title {
   font-weight: 700;
   font-size: 80px;
   color: white;
-  text-shadow: 4px 4px 1px #1affc6;
+  text-shadow: 4px 4px 4px #1affc6;
   margin: 0 25px 70px 25px;
 }
 
