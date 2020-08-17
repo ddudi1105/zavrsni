@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="text-align: center;">
     <section>
       <b-steps
         position="bottom"
@@ -54,7 +54,15 @@
       </b-steps>
     </section>
 
-    <v-container class="my-5 track-dsc">
+    <v-btn v-if="!showDetails" @click="showDetails = true">Show Details</v-btn>
+    <v-btn v-if="showDetails" @click="showDetails = false">Hide Details</v-btn>
+    <div class="remove" v-if="removable">
+      <v-btn text class="mx-2 top-right" fab dark x-small color="red" @click="emitRemoveTracking">
+        <v-icon dark>fa-times</v-icon>
+      </v-btn>
+    </div>
+
+    <v-container v-if="showDetails" class="my-5 track-dsc">
       <v-card flat class="pl-3 pb-1 pr-4 pt-3" v-for="(checkpoint, index) in trackInfo" :key="index">
         <v-row :class="`checkpoint ${checkpoint.checkpoint_status}`">
           <v-col cols="12" md="6" lg="4">
@@ -69,7 +77,7 @@
             <div class="caption grey--text">Date</div>
             <div>{{ checkpoint.Date }}</div>
           </v-col>
-          <v-col cols="4" md="6" lg="2">
+          <v-col cols="12" md="6" lg="2">
             <v-chip
               small
               :class="`${checkpoint.checkpoint_status} chip white--text`"
@@ -88,6 +96,14 @@ export default {
     tracked: {
       required: true,
     },
+    showDetails: {
+      type: Boolean,
+      default: true
+    },
+    removable: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -106,6 +122,11 @@ export default {
     status() {
       this.activeStep = this.statuses[this.tracked.status];
     },
+  },
+  methods: {
+    emitRemoveTracking() {
+      this.$emit('removeTracking', this.tracked.tracking_number);
+    }
   },
   created() {
     this.activeStep = this.statuses[this.tracked.status];
@@ -170,6 +191,16 @@ hr {
     margin: 0 0;
 }
 
+.remove {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  top: -185px;
+  right: -25px;
+}
+
 @media only screen and (max-width: 652px) {
   section.step-content {
     display: inline !important;
@@ -184,6 +215,13 @@ hr {
   div[data-v-469af010].b-steps h1 {
     /* selektirat samo section u kojem su steps i trenutni korak */
     width: 150px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .top-right {
+    top: -220px;
+    right: -25px;
   }
 }
 </style>

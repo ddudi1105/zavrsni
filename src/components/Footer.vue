@@ -32,7 +32,7 @@
 
         <v-card-text class="social">
           <p class="mt-3">Follow Us</p>
-          <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
+          <v-btn v-for="icon in icons" :key="icon" class="mx-4 social-btn" icon>
             <v-icon color="black" size="29px">{{ icon }}</v-icon>
           </v-btn>
         </v-card-text>
@@ -83,7 +83,7 @@ export default {
   width: 80%;
 }
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 420px) {
   .sellers, .carriers {
     flex-wrap: wrap;
   }
@@ -100,6 +100,12 @@ export default {
   .social {
     padding: 0;
     margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .social-btn {
+    width: 34px !important;
   }
 }
 </style>

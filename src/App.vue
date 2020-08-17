@@ -4,7 +4,6 @@
     <v-main>
       <router-view></router-view>
     </v-main>
-    <app-Footer></app-Footer>
   </v-app>
 </template>
 

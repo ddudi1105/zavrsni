@@ -4,7 +4,7 @@
       <h1 class="bkg-title">ParcelKing</h1>
       <p>Live Through Your Parcel's Journey</p>
       <router-link to="/signup" style="margin-top: 10px;">
-        <v-btn width="180" x-large rounded>Sign Up !</v-btn>
+        <v-btn width="180" x-large rounded v-if="!isAuthenticated">Sign Up !</v-btn>
       </router-link>
     </div>
 
@@ -135,7 +135,7 @@
       </div>
       <Contact id="contact" />
     </section>
-
+    <app-Footer></app-Footer>
   </div>
 </template>
 
@@ -144,11 +144,13 @@ import axios from 'axios';
 import Steps from '@/components/Steps'
 import { eventBus } from '../main'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default {
   components: {
     Steps,
-    Contact
+    Contact,
+    appFooter: Footer
   },
   data() {
     return {
@@ -243,6 +245,7 @@ export default {
               return;
             } else if((!carriers) || (carriers && carriers.length == 0)) {
               this.error = 'Enter a valid tracking number !';
+              //console.log(carriers);
               resolve();
               return;
             }
@@ -363,6 +366,7 @@ export default {
             this.trackNum = '';
             this.carriersNames = [];
             this.carriersCodes = [];
+            this.selectedCarrier = '';
             this.loadingSelect = false;
           });
           }, 1000);
@@ -379,6 +383,7 @@ export default {
           this.trackNum = '';
           this.carriersNames = [];
           this.carriersCodes = [];
+          this.selectedCarrier = '';
           this.loadingSelect = false;
         });
       }, 0);
@@ -393,6 +398,14 @@ export default {
         }
       });
   },
+  computed: {
+  isAuthenticated() {
+      return (
+        this.$store.getters.user != null &&
+        this.$store.getters.user != undefined
+      );
+    }
+  }
 };
 </script>
 
